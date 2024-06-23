@@ -26,22 +26,22 @@ module.exports.run = async function({ api, event, args }) {
     
     if (!input) {
         api.sendMessage('🟢 ᗩEᔕTᕼEᖇ ⚪\n━━━━━━━━━━━━━━━\nฅ^•ﻌ•^ฅ.  ?? .', event.threadID, event.messageID);
-api.setMessageReaction("🟡", event.messageID, () => {}, true);
+        api.setMessageReaction("🟡", event.messageID, () => {}, true);
         return;
     }
     
     try {
         const { data } = await axios.get(`https://zcdsphapilist.replit.app/gpt4?query=${encodeURIComponent(input)}`);
         
-        let response = data.response;
+        let response = data.response || 'No response received'; // Handling empty response
         
         // Replace characters with stylized characters from fonts
         response = response.split('').map(char => {
-            return fonts[char] || char; // Using || operator for default fallback
+            return fonts[char.toLowerCase()] || char; // Use lowercase for lookup to match fonts object
         }).join('');
         
         api.sendMessage(`🟢 ᗩEᔕTᕼEᖇ ⚪\n━━━━━━━━━━━━━━━━\n${response} 🟡`, event.threadID, event.messageID);
-api.setMessageReaction("🟢", event.messageID, () => {}, true);
+        api.setMessageReaction("🟢", event.messageID, () => {}, true);
         
     } catch (error) {
         console.error('Error:', error);
