@@ -6,7 +6,7 @@ module.exports.config = {
   role: 0,
   hasPrefix: true,
   description: "Get a random joke.",
-  usage: "quote",
+  usage: "joke",
   credits: "aesther",
   cooldown: 0
 };
