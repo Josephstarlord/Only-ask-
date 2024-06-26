@@ -32,7 +32,7 @@ module.exports.run = async function({ api, event, args }) {
     
     try {
         const { data } = await axios.get(`https://zcdsphapilist.replit.app/gpt4?query=${encodeURIComponent(input)}`);
-        
+        api.setMessageReaction("⚪", event.messageID, () => {}, true);
         let response = data.response || 'No response received'; // Handling empty response
         
         // Replace characters with stylized characters from fonts
@@ -46,5 +46,6 @@ module.exports.run = async function({ api, event, args }) {
     } catch (error) {
         console.error('Error:', error);
         api.sendMessage('⚠️ Error Loading ⚠️', event.threadID, event.messageID);
+        api.setMessageReaction("🔴", event.messageID, () => {}, true);
     }
 };
