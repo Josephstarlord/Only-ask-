@@ -31,7 +31,7 @@ module.exports.run = async function({ api, event, args }) {
     }
     
     try {
-        const { data } = await axios.get(`https://zcdsphapilist.replit.app/gpt4?query=${encodeURIComponent(input)}`);
+        const { data } = await axios.get(`https://ai-1stclass-nemory-project.vercel.app/api/gemma?ask=${encodeURIComponent(input)}`);
         api.setMessageReaction("⚪", event.messageID, () => {}, true);
         let response = data.response || 'No response received'; // Handling empty response
         
