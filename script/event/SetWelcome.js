@@ -1,3 +1,10 @@
+module.exports.config = {
+    name: 'SetWelcome',
+    version: '2.1',
+    description: "auto setwelcome command by Aesther",
+    usage: "ex : ai [prompt]",
+    credits: 'aesther',
+   } ;
 module.exports = {
     async handleEvent(api, event) {
         if (event.logMessageData?.addedParticipants) {
@@ -11,7 +18,7 @@ module.exports = {
                         const groupName = threadInfo.threadName;
                         const memberCount = threadInfo.participantIDs.length;
  
-                        // Random direct image links
+                        
                         const imageLinks = [
                             "https://i.postimg.cc/mk0fdc2d/4fa454b230dcadd57d8e66cfbe41152e.jpg",
                             "https://i.postimg.cc/Vs3kZvTQ/a72e50bd8bb773a9840ca7d848bdf6c6.jpg",
