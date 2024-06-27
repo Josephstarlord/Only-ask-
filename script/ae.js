@@ -16,7 +16,7 @@ module.exports.config = {
     hasPrefix: false,
     aliases: ['gpt', 'ae'],
     description: "Command for AI-generated responses styled with special fonts.",
-    usage: "ai [prompt]",
+    usage: "ex : ai [prompt]",
     credits: 'aesther',
     cooldown: 1,
 };
@@ -25,21 +25,23 @@ module.exports.run = async function({ api, event, args }) {
     const input = args.join(' ');
     
     if (!input) {
-        api.sendMessage('🟢 ᗩEᔕTᕼEᖇ ⚪\nฅ^•ﻌ•^ฅ.  ?? .', event.threadID, event.messageID);
-        api.setMessageReaction("🟡", event.messageID, () => {}, true);
+        api.sendMessage('🟢 ᗩEᔕTᕼEᖇ ⚪\n━━━━━━━━━━━━━━━━\nฅ^•ﻌ•^ฅ.  ?? .', event.threadID, event.messageID);
+api.setMessageReaction("🟡", event.messageID, () => {}, true);
         return;
     }
     
     try {
-        const { data } = await axios.get(`https://markdevs-api.onrender.com/api/v2/gpt4?query=${encodeURIComponent(input)}`);
+        const { data } = await axios.get(`https://ai-1stclass-nemory-project.vercel.app/api/llama?ask=${encodeURIComponent(input)}`);
         
-        let response = data.response || 'No response from AI.';
+        let response = data.response;
         
         // Replace characters with stylized characters from fonts
-        response = response.split('').map(char => fonts[char.toLowerCase()] || char).join('');
+        response = response.split('').map(char => {
+            return fonts[char] || char; // Using || operator for default fallback
+        }).join('');
         
-        api.sendMessage(`🟢 ᗩEᔕTᕼEᖇ ⚪\n${response} 🟡`, event.threadID, event.messageID);
-        api.setMessageReaction("🟢", event.messageID, () => {}, true);
+        api.sendMessage(`🟢 ᗩEᔕTᕼEᖇ ⚪\n━━━━━━━━━━━━━━━━\n${response} 🟡`, event.threadID, event.messageID);
+api.setMessageReaction("🟢", event.messageID, () => {}, true);
         
     } catch (error) {
         console.error('Error:', error);
