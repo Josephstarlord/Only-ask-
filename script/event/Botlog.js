@@ -1,7 +1,7 @@
 module.exports.config = {
-    name: 'SetWelcome',
+    name: 'botlog',
     version: '2.1',
-    description: "Auto setwelcome command by Aesther",
+    description: "Auto setwelcome command",
     credits: 'aesther',
 };
 
