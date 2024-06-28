@@ -14,7 +14,7 @@ module.exports.config = {
     version: '2',
     role: 0,
     hasPrefix: false,
-    aliases: ['gpt', 'ae'],
+    aliases: [],
     description: "Command for AI-generated responses styled with special fonts.",
     usage: "ex : ai [prompt]",
     credits: 'aesther',
