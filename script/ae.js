@@ -26,13 +26,12 @@ module.exports.run = async function({ api, event, args }) {
     
     if (!input) {
         api.sendMessage('🟢 ᗩEᔕTᕼEᖇ ⚪\n━━━━━━━━━━━━━━━━\nฅ^•ﻌ•^ฅ.  ?? .', event.threadID, event.messageID);
-api.setMessageReaction("🟡", event.messageID, () => {}, true);
+        api.setMessageReaction("🟡", event.messageID, () => {}, true);
         return;
     }
     
     try {
         const { data } = await axios.get(`https://hiroshi-rest-api.replit.app/ai/llama?ask=${encodeURIComponent(input)}`);
-        //Hiroshima api//
         let response = data.response;
         
         // Replace characters with stylized characters from fonts
@@ -41,7 +40,7 @@ api.setMessageReaction("🟡", event.messageID, () => {}, true);
         }).join('');
         
         api.sendMessage(`🟢 ᗩEᔕTᕼEᖇ ⚪\n━━━━━━━━━━━━━━━━\n${response} 🟡`, event.threadID, event.messageID);
-api.setMessageReaction("🟢", event.messageID, () => {}, true);
+        api.setMessageReaction("🟢", event.messageID, () => {}, true);
         
     } catch (error) {
         console.error('Error:', error);
