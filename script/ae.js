@@ -31,8 +31,8 @@ api.setMessageReaction("🟡", event.messageID, () => {}, true);
     }
     
     try {
-        const { data } = await axios.get(`https://ai-1stclass-nemory-project.vercel.app/api/llama?ask=${encodeURIComponent(input)}`);
-        
+        const { data } = await axios.get(`https://hiroshi-rest-api.replit.app/ai/llama?ask=${encodeURIComponent(input)}`);
+        //Hiroshima api//
         let response = data.response;
         
         // Replace characters with stylized characters from fonts
