@@ -30,14 +30,14 @@ module.exports.run = async function({ api, event, args }) {
     const input = args.join(' ');
     
     if (!input) {
-        api.sendMessage('🟢 ᗩEᔕTᕼEᖇ ⚪\n━━━━━━━━━━━━━━━\nฅ^•ﻌ•^ฅ.  ?? .', event.threadID, event.messageID);
+        api.sendMessage('🟡 ᗩEᔕTᕼEᖇ ⚪\n━━━━━━━━━━━━━━━\nฅ^•ﻌ•^ฅ.  ?? .', event.threadID, event.messageID);
         api.setMessageReaction("🟡", event.messageID, () => {}, true);
         return;
     }
     
     try {
-        const { data } = await axios.get(`https://ai-1stclass-nemory-project.vercel.app/api/gemma?ask=${encodeURIComponent(input)}`);
-        api.setMessageReaction("⚪", event.messageID, () => {}, true);
+        const { data } = await axios.get(`https://hiroshi-rest-api.replit.app/ai/jailbreak?ask=${encodeURIComponent(input)}`);
+        api.setMessageReaction("⭐", event.messageID, () => {}, true);
         let response = data.response || 'No response received'; // Handling empty response
         
         // Replace characters with stylized characters from fonts
@@ -45,8 +45,8 @@ module.exports.run = async function({ api, event, args }) {
             return fonts[char.toLowerCase()] || char; // Use lowercase for lookup to match fonts object
         }).join('');
         
-        api.sendMessage(`🟢 ᗩEᔕTᕼEᖇ ⚪\n━━━━━━━━━━━━━━━━\n${response} 🟡`, event.threadID, event.messageID);
-        api.setMessageReaction("🟢", event.messageID, () => {}, true);
+        api.sendMessage(`🟡 ᗩEᔕTᕼEᖇ ⚪\n━━━━━━━━━━━━━━━━\n${response}\n\n⚪🔵🔴`, event.threadID, event.messageID);
+        api.setMessageReaction("🟠", event.messageID, () => {}, true);
         
     } catch (error) {
         console.error('Error:', error);
