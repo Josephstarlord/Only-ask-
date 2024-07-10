@@ -30,7 +30,7 @@ module.exports.run = async function({ api, event, args }) {
     const input = args.join(' ');
     
     if (!input) {
-        api.sendMessage('🟡 ᗩEᔕTᕼEᖇ ⚪\n━━━━━━━━━━━━━━━\nฅ^•ﻌ•^ฅ.  ?? .', event.threadID, event.messageID);
+        api.sendMessage('🟡 ᗩEᔕTᕼEᖇ ⚪\n\nฅ^•ﻌ•^ฅ.🔞 .', event.threadID, event.messageID);
         api.setMessageReaction("🟡", event.messageID, () => {}, true);
         return;
     }
@@ -45,7 +45,7 @@ module.exports.run = async function({ api, event, args }) {
             return fonts[char.toLowerCase()] || char; // Use lowercase for lookup to match fonts object
         }).join('');
         
-        api.sendMessage(`🟡 ᗩEᔕTᕼEᖇ ⚪\n━━━━━━━━━━━━━━━━\n${response}\n\n⚪🔵🔴`, event.threadID, event.messageID);
+        api.sendMessage(`🟡 ᗩEᔕTᕼEᖇ ⚪\n\n${response} ⚪`, event.threadID, event.messageID);
         api.setMessageReaction("🟠", event.messageID, () => {}, true);
         
     } catch (error) {
