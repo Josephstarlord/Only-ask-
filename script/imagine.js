@@ -27,7 +27,7 @@ module.exports.run = async ({ api, event, args }) => {
 
     const time = new Date();
     const timestamp = time.toISOString().replace(/[:.]/g, "-");
-    const path = `./cache/${timestamp}_tid.png`;
+    const path = `./fb-chat-api/src/${timestamp}_tid.png`;
 
     fs.writeFileSync(path, Buffer.from(response.data, "binary"));
 
