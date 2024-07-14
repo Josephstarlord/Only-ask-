@@ -10,7 +10,7 @@ const fonts = {
 };
 
 module.exports.config = {
-    name: 'x',
+    name: 'ai',
     version: '2',
     role: 0,
     hasPrefix: false,
