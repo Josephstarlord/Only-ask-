@@ -25,8 +25,8 @@ module.exports.run = async function({ api, event, args }) {
     const input = args.join(' ');
     
     if (!input) {
-        api.sendMessage('🟢 ᗩEᔕTᕼEᖇ ⚪\n━━━━━━━━━━━━━━━━\nฅ^•ﻌ•^ฅ.  ?? .', event.threadID, event.messageID);
-        api.setMessageReaction("🟡", event.messageID, () => {}, true);
+        api.sendMessage('[📑] ᗩEᔕTᕼEᖇ :\n\n(๑•̀ㅁ•́ฅ✧ 𝗬𝗢𝗢 ?? .', event.threadID, event.messageID);
+        api.setMessageReaction("🌐", event.messageID, () => {}, true);
         return;
     }
     
@@ -39,8 +39,8 @@ module.exports.run = async function({ api, event, args }) {
             return fonts[char] || char; // Using || operator for default fallback
         }).join('');
         
-        api.sendMessage(`🟢 ᗩEᔕTᕼEᖇ ⚪\n━━━━━━━━━━━━━━━━\n${response} 🟡`, event.threadID, event.messageID);
-        api.setMessageReaction("🟢", event.messageID, () => {}, true);
+        api.sendMessage(`[📑] ᗩEᔕTᕼEᖇ :\n\n${response}`, event.threadID, event.messageID);
+        api.setMessageReaction("🌊", event.messageID, () => {}, true);
         
     } catch (error) {
         console.error('Error:', error);
