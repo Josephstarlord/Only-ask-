@@ -1,10 +1,10 @@
 #AUTOBOT 𝗕𝗬 ﹝ANJA﹞
 # PROJECT CREATOR</h1>
-<img src="https://i.ibb.co/gRcyNDr/image.jpg" alt="banner">
+<img src="https://i.ibb.co/RczZ833/image.jpg" alt="banner">
 <h1 align="center"><img src="./dashboard/images/logo-non-bg.png" width="22px"> 
 
 # FB PROFILE PHOTO</h1>
-<img src="https://i.ibb.co/stQtR0M/image.jpg" alt="banner">
+<img src="https://i.ibb.co/bLX4fT7/image.jpg" alt="banner">
 <h1 align="center"><img src="./dashboard/images/logo-non-bg.png" width="22px"> 
  
   # ﹝𝗔𝗘𝗦𝗧𝗛𝗘𝗥﹞(𝘊𝘺𝘣𝘦𝘳𝘱𝘶𝘯𝘬)  V𝟭 - ABOUT PROJECT INFORMATION</h1>
