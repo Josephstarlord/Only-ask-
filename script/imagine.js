@@ -33,7 +33,7 @@ module.exports.run = async ({ api, event, args }) => {
 
     setTimeout(() => {
       api.sendMessage({
-        body: ˋ[🖌]𝗣𝗥𝗢𝗠𝗣𝗧 :\n\n${query}\n━━━━━━━━━━━━━━━━\n[📑]𝗥𝗘𝗦𝗨𝗟𝗧𝗔 :ˋ,
+        body: "[📑]𝗥𝗘𝗦𝗨𝗟𝗧𝗔 :",
         attachment: fs.createReadStream(path),
       }, threadID, () => fs.unlinkSync(path));
     }, 5000);
