@@ -25,7 +25,7 @@ module.exports.run = async function({ api, event, args }) {
     const input = args.join(' ');
     
     if (!input) {
-        api.sendMessage('🟢 ᗩEᔕTᕼEᖇ ⚪\n━━━━━━━━━━━━━━━━\nฅ^•ﻌ•^ฅ.  ?? .', event.threadID, event.messageID);
+        api.sendMessage('🟢 ᗩEᔕTᕼEᖇ ⚪\n━━━━━━━━━━━━━━━━\n(๑'ڡ'๑)୨♡ x ?(ㅅ˙³˙)♡? .', event.threadID, event.messageID);
         api.setMessageReaction("🟡", event.messageID, () => {}, true);
         return;
     }
