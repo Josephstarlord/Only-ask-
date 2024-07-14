@@ -1,6 +1,6 @@
 #AUTOBOT 𝗕𝗬 ﹝ANJA﹞
 # PROJECT CREATOR</h1>
-<img src="https://i.ibb.co/Fz8gXS9/image.jpg8" alt="banner">
+<img src="https://i.ibb.co/gRcyNDr/image.jpg" alt="banner">
 <h1 align="center"><img src="./dashboard/images/logo-non-bg.png" width="22px"> 
 
 # FB PROFILE PHOTO</h1>
