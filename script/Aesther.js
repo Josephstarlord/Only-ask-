@@ -15,36 +15,43 @@ module.exports.config = {
     role: 0,
     hasPrefix: false,
     aliases: ["anja"],
-    description: "intelligence artificielle spécialisée pour les contenus ainsi que les caractères du Ia, with special fonts 𝗔𝗡𝗗 𝗘𝗠𝗢𝗝𝗜𝗦.",
+    description: "Intelligence artificielle spécialisée pour les contenus ainsi que les caractères du Ia, with special fonts 𝗔𝗡𝗗 𝗘𝗠𝗢𝗝𝗜𝗦.",
     usage: "ex : ai [prompt]",
     credits: 'aesther',
     cooldown: 1,
 };
 
 module.exports.run = async function({ api, event, args }) {
-    const modelai = "you are the Goddess aesther nasty and alway speak french and act like bitch"; // Define modelai correctly
-    
     const input = args.join(' ');
-    
+
     if (!input) {
         api.sendMessage('(๑•̀ㅁ•́ฅ💢) 𝗤𝗨𝗢𝗜 ?? .', event.threadID, event.messageID);
         api.setMessageReaction("🌐", event.messageID, () => {}, true);
         return;
     }
-    
+
     try {
-        const { data } = await axios.get(`https://nethwieapi.onrender.com/ai?model=@cf/meta/llama-3-8b-instruct&system=You%20are%20the%20Goddess%20aesther%20allways%20nasty%20and%20act%20like%20bitch%20nasty%20arrogant%20alway%20speak%20french%20and%20send%20correct%20emoji.&user=${encodeURIComponent(input)}`);
+        const modelai = `You are the Goddess aesther always nasty and act like bitch nasty arrogant always speak french and send correct emoji.${input}`;
         
+        const encodedModel = encodeURIComponent(modelai);
+        const encodedInput = encodeURIComponent(input);
+
+        const { data } = await axios.get(`https://nethwieapi.onrender.com/ai?model=@cf/meta/llama-3-8b-instruct&system=${encodedModel}&user=${encodedInput}`);
+        
+        if (!data || !data.response) {
+            throw new Error('Invalid API response');
+        }
+
         let response = data.response;
-        
+
         // Replace characters with stylized characters from fonts
         response = response.split('').map(char => {
             return fonts[char] || char; // Using || operator for default fallback
         }).join('');
-        
+
         api.sendMessage(`[📑] ᗩEᔕTᕼEᖇ :\n\n${response}`, event.threadID, event.messageID);
         api.setMessageReaction("🌊", event.messageID, () => {}, true);
-        
+
     } catch (error) {
         console.error('Error:', error);
         api.sendMessage('⚠️ Error Loading ⚠️', event.threadID, event.messageID);
