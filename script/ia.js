@@ -10,7 +10,7 @@ const fonts = {
 };
 
 module.exports.config = {
-    name: 'ae',
+    name: 'ai',
     version: '2',
     role: 0,
     hasPrefix: false,
@@ -31,7 +31,7 @@ module.exports.run = async function({ api, event, args }) {
     }
     
     try {
-        const { data } = await axios.get(`https://my-api-v1.onrender.com/api/v2/gpt4?query=${encodeURIComponent(input)}`);
+        const { data } = await axios.get(`https://markdevs69-1efde24ed4ea.herokuapp.com/api/gpt4o?q=${encodeURIComponent(input)}`);
         let response = data.response;
         
         // Replace characters with stylized characters from fonts
