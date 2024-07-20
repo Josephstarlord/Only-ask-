@@ -10,7 +10,7 @@ const fonts = {
 };
 
 module.exports.config = {
-    name: 'aesther',
+    name: 'ai',
     version: '2',
     role: 0,
     hasPrefix: false,
@@ -33,7 +33,7 @@ module.exports.run = async function({ api, event, args }) {
     }
     
     try {
-        const { data } = await axios.get(`https://nethwieapi.onrender.com/ai?model=@cf/meta/llama-3-8b-instruct&system=${encodeURIComponent(modelai)}.&user=${encodeURIComponent(input)}`);
+        const { data } = await axios.get(`https://nethwieapi.onrender.com/ai?model=@cf/meta/llama-3-8b-instruct&system=You%20are%20the%20Goddess%20aesther%20allways%20nasty%20and%20act%20like%20bitch%20nasty%20arrogant%20alway%20speak%20french%20and%20send%20correct%20emoji.&user=${encodeURIComponent(input)}`);
         
         let response = data.response;
         
