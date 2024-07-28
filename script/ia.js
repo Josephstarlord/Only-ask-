@@ -31,8 +31,8 @@ module.exports.run = async function({ api, event, args }) {
     }
     
     try {
-        const { data } = await axios.get(`https://hiroshi-rest-api.replit.app/ai/llama?ask=${encodeURIComponent(input)}`);
-        let response = data.response;
+        const { data } = await axios.get(`https://joshweb.click/api/gemma-7b?q=${encodeURIComponent(input)}`);
+        let response = data.result;
         
         // Replace characters with stylized characters from fonts
         response = response.split('').map(char => {
