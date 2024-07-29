@@ -31,8 +31,8 @@ module.exports.run = async function({ api, event, args }) {
     }
     
     try {
-        const { data } = await axios.get(`https://joshweb.click/api/gemma-7b?q=${encodeURIComponent(input)}`);
-        let response = data.result;
+        const { data } = await axios.get(`https://nash-rest-api.vercel.app/freegpt4o8k?question=${encodeURIComponent(input)}`);
+        let response = data.response;
         
         // Replace characters with stylized characters from fonts
         response = response.split('').map(char => {
