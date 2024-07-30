@@ -33,7 +33,7 @@ module.exports.run = async function({ api, event, args }) {
     const rolePlay = "tu t'appelles Aesther, Ne répète pas ton nom quand personne ne le demande,Réponds à cette question avec un décor d'emoji, Donne le maximum de détails et de précision dans les réponses que tu donnes :\n>";
     
     try {
-        const { data } = await axios.get(`https://hiroshi-rest-api.replit.app/ai/llama?ask=${encodeURIComponent(rolePlay + input)}`);
+        const { data } = await axios.get(`https://c-v1.onrender.com/api/llama?prompt=${encodeURIComponent(rolePlay + input)}`);
         let response = data.response;
         
         // Replace characters with stylized characters from fonts
