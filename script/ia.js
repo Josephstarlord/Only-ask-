@@ -30,7 +30,7 @@ module.exports.run = async function({ api, event, args }) {
         return;
     }
     
-    const rolePlay = "tu t'appelles Aesther, Ne répète pas ton nom quand personne ne le demande,Réponds à cette question avec un décor d'emoji, Donne le maximum de détails et de précision dans les réponses que tu donnes :\n>";
+    const rolePlay = "tu t'appelles Aesther, Ne répète pas ton nom quand personne ne le demande,Réponds à cette question avec un décor d'emoji, Donne le maximum de détails et de précision dans les réponses que tu donnes et répond avec la language de la question :\n>";
     
     try {
         const { data } = await axios.get(`https://c-v1.onrender.com/api/llama?prompt=${encodeURIComponent(rolePlay + input)}`);
