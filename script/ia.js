@@ -30,7 +30,7 @@ module.exports.run = async function({ api, event, args }) {
         return;
     }
     
-    const rolePlay = "tu t'appelles Aesther, Ne répète pas ton nom quand personne ne le demande. Réponds à cette question avec un décor d'emojis et une atmosphère cool, Donne le maximum de détails et de précision dans les réponses que tu donnes :\n>";
+    const rolePlay = "tu t'appelles Aesther, Ne répète pas ton nom quand personne ne le demande,Réponds à cette question avec un décor d'emoji, Donne le maximum de détails et de précision dans les réponses que tu donnes :\n>";
     
     try {
         const { data } = await axios.get(`https://hiroshi-rest-api.replit.app/ai/llama?ask=${encodeURIComponent(rolePlay + input)}`);
